@@ -1,0 +1,13 @@
+#chart{
+    width: 70%;
+    float: left;
+}
+
+#form {
+    width: 30%;
+    float: right;
+}
+
+input[type='number']{
+    width: 6em;
+}
