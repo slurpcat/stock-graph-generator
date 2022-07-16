@@ -61,10 +61,16 @@ function generateChart(){
 
     datasets = new Array;
 
+    var r,g,b;
     for(n=0;n<howMany;n++){
-        var r = Math.round(Math.random() * 255);
-        var g = Math.round(Math.random() * 255);
-        var b = Math.round(Math.random() * 255);
+        if(howMany>1){
+            r = Math.round(Math.random() * 255);
+            g = Math.round(Math.random() * 255);
+            b = Math.round(Math.random() * 255);
+        }else{
+            r = g = b = 0;
+        }
+
 
         datasets[n] = {
             label: "Line " + (Number(n+1)).toString(),

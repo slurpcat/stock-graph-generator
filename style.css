@@ -1,6 +1,12 @@
+body{
+    background-color:bisque;
+}
+
 #chart{
-    width: 70%;
+    width: 65%;
     float: left;
+    border: 2pt solid;
+    background-color: white;
 }
 
 #form {
