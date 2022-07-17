@@ -1,4 +1,4 @@
-var timeInterval = 0.002;
+const TIME_INTERVAL = 0.002;
 var howManyTimesGenerated = 0;
 var myChart;
 
@@ -26,12 +26,12 @@ function normalRand(){
 }
 
 function generateData(sP,eRoR,eAV){
-
+    
     data = {}
     data[0] = sP
 
     for(i=1;i<howLong;i++){
-        data[i] = data[i-1] * Math.exp((eRoR - eAV**2 / 2) * timeInterval + eAV * normalRand() * Math.sqrt(timeInterval));
+        data[i] = data[i-1] * Math.exp((eRoR - eAV**2 / 2) * TIME_INTERVAL + eAV * normalRand() * Math.sqrt(TIME_INTERVAL));
         data[i] = data[i].toFixed(2);
     }
     
@@ -44,8 +44,7 @@ function generateData(sP,eRoR,eAV){
 }
 
 function generateChart(){
-    myChart;
-    
+
     howManyTimesGenerated += 1;
     if(howManyTimesGenerated>1){
         myChart.destroy();  
@@ -81,12 +80,12 @@ function generateChart(){
         }; 
     }
 
-    const labels = Array.from(Array(howLong).keys());
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const config = {
+    const LABELS = Array.from(Array(howLong).keys());
+    const CTX = document.getElementById('myChart').getContext('2d');
+    const CONFIG = {
         type: 'line',
         data: {
-            labels: labels,
+            labels: LABELS,
             datasets: datasets
         },
         options: {
@@ -96,6 +95,5 @@ function generateChart(){
         }
     }
     
-    myChart = new Chart(ctx, config);
+    myChart = new Chart(CTX, CONFIG);
 }
-
